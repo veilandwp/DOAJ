@@ -52,7 +52,6 @@
             this.buttonClearScreen = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonSaveToDatabase = new System.Windows.Forms.Button();
-            this.buttonDownloadPapers = new System.Windows.Forms.Button();
             this.buttonDownloadJournal = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxDisplay = new System.Windows.Forms.TextBox();
@@ -132,7 +131,7 @@
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(576, 178);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 19);
+            this.label9.Size = new System.Drawing.Size(80, 19);
             this.label9.TabIndex = 1019;
             this.label9.Text = "Year Scope";
             // 
@@ -225,7 +224,7 @@
             // buttonExit
             // 
             this.buttonExit.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonExit.Location = new System.Drawing.Point(703, 482);
+            this.buttonExit.Location = new System.Drawing.Point(703, 419);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(116, 58);
             this.buttonExit.TabIndex = 1014;
@@ -236,7 +235,7 @@
             // buttonClearScreen
             // 
             this.buttonClearScreen.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonClearScreen.Location = new System.Drawing.Point(575, 482);
+            this.buttonClearScreen.Location = new System.Drawing.Point(575, 419);
             this.buttonClearScreen.Name = "buttonClearScreen";
             this.buttonClearScreen.Size = new System.Drawing.Size(127, 58);
             this.buttonClearScreen.TabIndex = 1013;
@@ -258,24 +257,13 @@
             // buttonSaveToDatabase
             // 
             this.buttonSaveToDatabase.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSaveToDatabase.Location = new System.Drawing.Point(575, 418);
+            this.buttonSaveToDatabase.Location = new System.Drawing.Point(575, 355);
             this.buttonSaveToDatabase.Name = "buttonSaveToDatabase";
             this.buttonSaveToDatabase.Size = new System.Drawing.Size(244, 58);
             this.buttonSaveToDatabase.TabIndex = 1012;
             this.buttonSaveToDatabase.Text = "Conserve To Database";
             this.buttonSaveToDatabase.UseVisualStyleBackColor = true;
             this.buttonSaveToDatabase.Click += new System.EventHandler(this.buttonSaveToDatabase_Click);
-            // 
-            // buttonDownloadPapers
-            // 
-            this.buttonDownloadPapers.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonDownloadPapers.Location = new System.Drawing.Point(575, 355);
-            this.buttonDownloadPapers.Name = "buttonDownloadPapers";
-            this.buttonDownloadPapers.Size = new System.Drawing.Size(244, 57);
-            this.buttonDownloadPapers.TabIndex = 1011;
-            this.buttonDownloadPapers.Text = "Download Paper List";
-            this.buttonDownloadPapers.UseVisualStyleBackColor = true;
-            this.buttonDownloadPapers.Click += new System.EventHandler(this.buttonDownloadPapers_Click);
             // 
             // buttonDownloadJournal
             // 
@@ -301,13 +289,13 @@
             // textBoxDisplay
             // 
             this.textBoxDisplay.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxDisplay.Location = new System.Drawing.Point(2, 168);
+            this.textBoxDisplay.Location = new System.Drawing.Point(2, 165);
             this.textBoxDisplay.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.textBoxDisplay.Multiline = true;
             this.textBoxDisplay.Name = "textBoxDisplay";
             this.textBoxDisplay.ReadOnly = true;
             this.textBoxDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDisplay.Size = new System.Drawing.Size(570, 347);
+            this.textBoxDisplay.Size = new System.Drawing.Size(570, 312);
             this.textBoxDisplay.TabIndex = 1016;
             this.textBoxDisplay.WordWrap = false;
             this.textBoxDisplay.DoubleClick += new System.EventHandler(this.textBoxDisplay_DoubleClick);
@@ -316,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 569);
+            this.ClientSize = new System.Drawing.Size(839, 480);
             this.Controls.Add(this.textBoxYearEnd);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox4);
@@ -339,7 +327,6 @@
             this.Controls.Add(this.buttonClearScreen);
             this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.buttonSaveToDatabase);
-            this.Controls.Add(this.buttonDownloadPapers);
             this.Controls.Add(this.buttonDownloadJournal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxDisplay);
@@ -377,7 +364,6 @@
         private System.Windows.Forms.Button buttonClearScreen;
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonSaveToDatabase;
-        private System.Windows.Forms.Button buttonDownloadPapers;
         private System.Windows.Forms.Button buttonDownloadJournal;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.TextBox textBoxDisplay;

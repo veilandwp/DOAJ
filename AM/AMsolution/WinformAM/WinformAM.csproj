@@ -48,14 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\AuthorsBLL.cs" />
     <Compile Include="BLL\CategoryWebsiteBLL.cs" />
     <Compile Include="BLL\JournalBLL.cs" />
-    <Compile Include="BLL\PapersBLL.cs" />
-    <Compile Include="DAL\AuthorsDAL.cs" />
     <Compile Include="DAL\CategoryWebsiteDAL.cs" />
     <Compile Include="DAL\JournalDAL.cs" />
-    <Compile Include="DAL\PapersDAL.cs" />
     <Compile Include="DBUtility\DBHelperSQL.cs" />
     <Compile Include="AMLogin.cs">
       <SubType>Form</SubType>
@@ -69,11 +65,8 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\AuthorInfo.cs" />
     <Compile Include="Model\CategoryWebsite.cs" />
     <Compile Include="Model\Journal.cs" />
-    <Compile Include="Model\JournalInfo.cs" />
-    <Compile Include="Model\PaperInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AMLogin.resx">

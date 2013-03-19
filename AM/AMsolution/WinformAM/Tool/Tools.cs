@@ -363,22 +363,59 @@ namespace WinformAM.Tool
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public IList<string> GetISSNAndEISSN(string str)
+        public static IList<string> GetISSNAndEISSN(string str)
         {
-            IList<string> strList = new List<string>();
-            StringBuilder sb = new StringBuilder();
+            IList<string> strList = new List<string>(); 
+            int j = 0;
             for(int i = 0; i < 2; i++)
             {
-                int j = 0;
-                while (j < str.Length && str[j] == ' ')
+                StringBuilder sb = new StringBuilder();
+                while (j < str.Length && !IsLegalChar(str[j]))
                     j++;
-                while (j < str.Length && str[j++] != ' ')
+                while (j < str.Length && IsLegalChar(str[j]))
+                {
                     sb.Append(str[j]);
+                    j++;
+                }
                 if (sb.Length > 0)
-                    strList.Add(sb.ToString());
+                    strList.Add(sb.ToString());        
             }
 
             return strList;
+        }
+
+        public static bool IsLegalChar(char s)
+        {
+            if (s == ' ' || s == '\n' || s == '\r')
+                return false;
+            return true;
+        }
+
+        public static string DeleteBeginAndEndIllegalChar(string str)
+        {
+            int i = 0;
+            while (i < str.Length && !IsLegalChar(str[i]))
+                i++;
+            int j = str.Length - 1;
+            while (j >= 0 && !IsLegalChar(str[j]))
+                j--;
+            if (j >= i)
+            {
+                return str.Substring(i, j - i + 1);
+            }
+            else
+                return null;
+        }
+
+        public static string GetFolderName(string url)
+        {
+            int i;
+            for(i = 0; i < url.Length; i++)
+            {
+                if(url[i] == '?')
+                    break;
+            }
+            return url.Substring(i+1);
         }
     }
 }

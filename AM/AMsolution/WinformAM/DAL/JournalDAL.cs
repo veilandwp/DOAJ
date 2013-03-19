@@ -12,7 +12,7 @@ namespace WinformAM.DAL
 {
     public partial class JournalDAL
     {
-        private const string SQL_INSERT_JOURNAL = "insert into T_Journal(ISSN,EISSN,Publisher,Subject,JournalLanguage,StartYear,PublicationFee,CategoryWebsiteID) values(@ISSN,@EISSN,@Publisher,@Subject,@JournalLanguage,@StartYear,@PublicationFee,@CategoryWebsiteID)";
+        private const string SQL_INSERT_JOURNAL = "insert into T_Journal(JournalName,ISSN,EISSN,Publisher,Subject,JournalLanguage,StartYear,PublicationFee,CategoryWebsiteID) values(@JournalName,@ISSN,@EISSN,@Publisher,@Subject,@JournalLanguage,@StartYear,@PublicationFee,@CategoryWebsiteID)";
 
         public bool Add(Journal model)
         {
@@ -25,6 +25,7 @@ namespace WinformAM.DAL
                     new SqlParameter("@StartYear", SqlDbType.NVarChar,32),
 					new SqlParameter("@PublicationFee", SqlDbType.NVarChar,32),
 					new SqlParameter("@CategoryWebsiteID", SqlDbType.Int,4),
+                    new SqlParameter("@JournalName", SqlDbType.NVarChar, 1024)
                                         };
             parameters[0].Value = model.ISSN;
             parameters[1].Value = model.EISSN;
@@ -34,8 +35,11 @@ namespace WinformAM.DAL
             parameters[5].Value = model.StartYear;
             parameters[6].Value = model.PublicationFee;
             parameters[7].Value = model.CategoryWebsiteID;
+            parameters[8].Value = model.JournalName;
 
-            bool result = new DBHelperSQL().ExecuteNonQuery(SQL_INSERT_JOURNAL, parameters, MethodInfo.GetCurrentMethod().Name);
+            StringBuilder sb = new StringBuilder();
+            sb.Append(SQL_INSERT_JOURNAL);
+            bool result =new DBHelperSQL().ExecuteNonQuery(sb, parameters, MethodInfo.GetCurrentMethod().Name);
             return result;
         }
     }

@@ -20,10 +20,12 @@ namespace WinformAM.DAL
             try
             {
                 DataTable dt = new DataTable();
-                dt = DBHelperSQL().ExecuteNonQuery(SQL_SELECT_CategoryWebsite, MethodInfo.GetCurrentMethod().Name);
+                StringBuilder sb = new StringBuilder();
+                sb.Append(SQL_SELECT_CategoryWebsite);
+                dt =new DBHelperSQL().ExecuteQuery(sb, MethodInfo.GetCurrentMethod().Name);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    CategoryWebsite cw = new CategoryWebsite(dr["CategoryWebsiteID"], dr["CategoryLevelOne"], dr["CategoryLevelTwo"], dr["CategoryLevelThree"], dr["Website"], dr["WebsiteCount"]);
+                    CategoryWebsite cw = new CategoryWebsite(Convert.ToInt32(dr["CategoryWebsiteID"].ToString()), dr["CategoryLevelOne"].ToString(), dr["CategoryLevelTwo"].ToString(), dr["CategoryLevelThree"].ToString(), dr["Website"].ToString(), Convert.ToInt32(dr["WebsiteCount"].ToString()));
                     categoryWebsites.Add(cw);
                 }
                 return categoryWebsites;
@@ -31,7 +33,8 @@ namespace WinformAM.DAL
             catch (System.Exception ex)
             {
                 Console.WriteLine(ex.Message);
-            }        
+            }
+            return null;
         }
     }
 }
